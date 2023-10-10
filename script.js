@@ -15,7 +15,7 @@ function getCardPoints(card){
 }
 
 function getCardImage(card){
-        return `images2/${card}.jpg`
+        return `images/${card}.jpg`
 }
 
 function addUserPoints(card) {

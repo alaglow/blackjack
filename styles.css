@@ -52,6 +52,9 @@ button:enabled:active {
 #stand-btn {
     background-color: rgb(96, 96, 176);
 }
+#reset-btn {
+    background-color: rgb(229, 229, 92);
+}
 
 div {
     border-radius: 10px;
@@ -64,9 +67,6 @@ div {
 #user-cards {
     float: left;
     padding-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    position: relative;
 }
 
 #computer-cards {

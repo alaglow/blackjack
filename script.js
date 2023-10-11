@@ -47,7 +47,7 @@ function renderPlayerCard(card) {
 function renderComputerCard(card) {
     let cardImgEl = document.createElement('img');
     cardImgEl.src = getCardImage(card);
-    document.getElementById('computer-cards').appendChild(cardImgEl);
+    document.getElementById('computer-cards').appendChild(cardImgEl)
 }
 
 function evaluateScore() {
@@ -75,4 +75,24 @@ function shouldComputerDraw() {
         return false;
     }
     return true;
+}
+
+function onReset() {
+    playerPoints = 0;
+    computerPoints = 0;
+    document.getElementById("player-points-el").textContent = playerPoints;
+    document.getElementById("computer-points-el").textContent = computerPoints;
+    document.getElementById('hit-btn').disabled = false;
+    document.getElementById("result-el").textContent = "Let's play"
+
+    const computerCards = document.getElementById('computer-cards')
+    removeAllChildren(computerCards);
+    const playerCards = document.getElementById('user-cards')
+    removeAllChildren(playerCards)
+}
+
+function removeAllChildren(element) {
+    while (element.lastElementChild) {
+        element.removeChild(element.lastElementChild);
+    }
 }

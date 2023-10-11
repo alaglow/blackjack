@@ -1,15 +1,29 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <h1>BLACKJACK</h1>
-        
-        <p id="cards-el">Cards:</p>
-        <div id="user-cards"></div>
-        <p id="sum-el">Sum:</p>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>BLACKJACK</h1>
+
+
+    <div>
+        <p id="result-el"></p>
+        <p>
+            Player: <span id="player-points-el">0</span>
+            Computer: <span id="computer-points-el">0</span>
+        </p>
         <button id="hit-btn" onclick="onHit()">HIT</button>
-        <button id="stand-btn" onclick="">STAND</button>
-        <script src="script.js"></script>
-    </body>
+        <button id="stand-btn" onclick="onStand()">STAND</button>
+    </div>
+
+    <div id="card-container">
+        <div id="user-cards"></div>
+        <div id="computer-cards"></div>
+    </div>  
+
+    <script src="script.js"></script>
+</body>
+
 </html>

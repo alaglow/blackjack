@@ -1,6 +1,6 @@
-
 body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("images/background.jpg");
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-size: cover;
     text-align: center;
     color: white;
@@ -21,7 +21,6 @@ h1 {
 button {
     color: black;
     width: 300px;
-    background-color: goldenrod;
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
@@ -30,9 +29,10 @@ button {
     margin-bottom: 10px;
     margin-top: 2px;
     box-shadow: 2px 2px 8px black;
-    
+
 }
-button:active {
+
+button:enabled:active {
     background-color: #3e8e41;
     box-shadow: 2px 2px 4px black;
     transform: translateY(8px);
@@ -43,16 +43,33 @@ button:active {
     background-color: rgb(177, 92, 92);
 }
 
+#hit-btn[disabled] {
+    background-color: grey;
+    cursor: not-allowed;
+
+}
+
 #stand-btn {
     background-color: rgb(96, 96, 176);
 }
 
-div { 
-    float: left;
+div {
     border-radius: 10px;
-    display: inline-flex;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 5px 5px 10px black;
     padding-left: 5px;
+    text-align: center;
+}
+
+#user-cards {
+    float: left;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
+#computer-cards {
+    float: right;
+    padding-top: 20px;
 }

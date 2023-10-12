@@ -39,17 +39,20 @@ function onHit() {
 }
 
 function renderPlayerCard(card) {
-    let cardImgEl = document.createElement('img');
-    cardImgEl.src = getCardImage(card);
-    cardImgEl.className = "card-img";
+    let cardImgEl = createCardImage(card);
     document.getElementById('user-cards').appendChild(cardImgEl);
 }
 
 function renderComputerCard(card) {
+    let cardImgEl = createCardImage(card);
+    document.getElementById('computer-cards').appendChild(cardImgEl)
+}
+
+function createCardImage(card) {
     let cardImgEl = document.createElement('img');
     cardImgEl.src = getCardImage(card);
     cardImgEl.className = "card-img";
-    document.getElementById('computer-cards').appendChild(cardImgEl)
+    return cardImgEl;
 }
 
 function evaluatePlayerScore() {
@@ -65,7 +68,7 @@ function evaluatePlayerScore() {
 }
 
 function evaluateAllScores() {
-    if(computerPoints === 21 || computerPoints >= playerPoints){
+    if (computerPoints === 21 || computerPoints >= playerPoints) {
         document.getElementById("result-el").textContent = "Computer win"
     } else {
         document.getElementById("result-el").textContent = "You win"

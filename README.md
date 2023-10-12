@@ -2,4 +2,4 @@
 
 My first GUI game in JS + CSS + HTML
 
-![](demo.gif)
+![](images/demo.gif)

@@ -35,22 +35,24 @@ function onHit() {
     let card = drawCard();
     renderPlayerCard(card);
     addUserPoints(card);
-    evaluateScore();
+    evaluatePlayerScore();
 }
 
 function renderPlayerCard(card) {
     let cardImgEl = document.createElement('img');
     cardImgEl.src = getCardImage(card);
+    cardImgEl.className = "card-img";
     document.getElementById('user-cards').appendChild(cardImgEl);
 }
 
 function renderComputerCard(card) {
     let cardImgEl = document.createElement('img');
     cardImgEl.src = getCardImage(card);
+    cardImgEl.className = "card-img";
     document.getElementById('computer-cards').appendChild(cardImgEl)
 }
 
-function evaluateScore() {
+function evaluatePlayerScore() {
     if (playerPoints > 20) {
         document.getElementById('hit-btn').disabled = true;
     }
@@ -62,12 +64,22 @@ function evaluateScore() {
     }
 }
 
+function evaluateAllScores() {
+    if(computerPoints === 21 || computerPoints >= playerPoints){
+        document.getElementById("result-el").textContent = "Computer win"
+    } else {
+        document.getElementById("result-el").textContent = "You win"
+    }
+}
+
+
 function onStand() {
     while (shouldComputerDraw()) {
         let card = drawCard();
         renderComputerCard(card);
         addComputerPoints(card);
     }
+    evaluateAllScores();
 }
 
 function shouldComputerDraw() {

@@ -73,3 +73,7 @@ div {
     float: right;
     padding-top: 20px;
 }
+
+.card-img {
+    margin-left: 5px;
+}
